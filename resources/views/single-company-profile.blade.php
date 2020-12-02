@@ -4,7 +4,7 @@
 
 <!-- Titlebar
 ================================================== -->
-<div class="single-page-header" data-background-image="images/single-company.jpg">
+<div class="single-page-header" data-background-image="images/employer.jpg">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
