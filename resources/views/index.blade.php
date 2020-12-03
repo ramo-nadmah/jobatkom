@@ -27,7 +27,7 @@
 		<!-- Search Bar -->
 		<div class="row">
 			<div class="col-md-12">
-                <form action="search-job" method="post">
+                <form action="search-job" method="get">
                     @csrf
 				<div class="intro-banner-search-form margin-top-95">
 
