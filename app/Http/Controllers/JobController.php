@@ -73,6 +73,7 @@ class JobController extends Controller
         ]);
         $job=Job::find($job_id);
         $job->title=$request->title;
+        $job->type=$request->type;
         $job->salary_min_value=$request->salary_min_value;
         $job->salary_max_value=$request->salary_max_value;
         $job->tags=$request->tags;

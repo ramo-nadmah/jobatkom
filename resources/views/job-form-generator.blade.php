@@ -20,6 +20,10 @@
                 <!-- Headline -->
 
 
+                <p>please enter a new <strong>Title:</strong></p>
+                <input type="text" name="title" value="{{$job->title}}">
+                <hr>
+
 
 
                 <p>Job <strong> Type </strong> :{{$job->type}}</p>
