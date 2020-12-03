@@ -178,7 +178,7 @@ class FreelancerController extends Controller
     public function browseFreelancers()
     {
         $freelancers=Freelancer::paginate(8);
-        return view('Freelancers-grid-layout',compact(['freelancers']));
+        return view('freelancers-grid-layout',compact(['freelancers']));
     }
 
     public function filterFreelancers(Request $request)
@@ -294,7 +294,7 @@ class FreelancerController extends Controller
 
 //        dd($freelancers);
 
-        return view('Freelancers-grid-layout',compact(['freelancers']));
+        return view('freelancers-grid-layout',compact(['freelancers']));
 
 
 
