@@ -18,6 +18,6 @@ class Task extends Model
     }
     public function task_bids()
     {
-        return $this->hasMany("App\Task_bid");
+        return $this->hasMany("App\Task_Bid");
     }
 }

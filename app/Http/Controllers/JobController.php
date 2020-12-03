@@ -94,9 +94,11 @@ class JobController extends Controller
 //        dd(Job::where('id',$job_id)->where('employer_id',Auth::user()->employers[0]->id)->get());
         $job=Job::where('id',$job_id)->where('employer_id',Auth::user()->employers[0]->id)->get();
 //      dd(Job::find($job_id)->where('employer_id',Auth::user()->employers[0]->id)->firstorfail()->job_bids()->get());
-        $job_bids=Job::find($job_id)->where('employer_id',Auth::user()->employers[0]->id)->firstorfail()->job_bids()->get();
+//        $job_bids=Job::find($job_id)->where('employer_id',Auth::user()->employers[0]->id)->firstorfail()->job_bids()->get();
 //      dd(Job::where('id',$job_id)->where('employer_id',Auth::user()->employers[0]->id)->jobBids);
 //        $job_bids=$job->job_Bids()->all();
+       $job_bids=Job_bid::where('job_id',$job_id)->get();
+
 
         return view('dashboard-manage-candidates',compact(['job','job_bids']));
     }

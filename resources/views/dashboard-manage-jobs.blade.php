@@ -5,7 +5,7 @@
 
 
 <!-- Dashboard Container -->
-<div class="dashboard-container">
+
 
 	<!-- Dashboard Sidebar
 	================================================== -->
@@ -100,7 +100,7 @@
 	</div>
 	<!-- Dashboard Content / End -->
 
-</div>
+
 <!-- Dashboard Container / End -->
 
 

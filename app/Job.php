@@ -20,7 +20,7 @@ class Job extends Model
 
     public function job_bids()
     {
-        return $this->hasMany("App\Job_bid");
+        return $this->hasMany("App\Job_Bid");
     }
 
 }

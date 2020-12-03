@@ -53,12 +53,12 @@
 											<!-- Avatar -->
 											<div class="freelancer-avatar">
 
-												<a href="/freelancer={{$job_bid->freelancer->id}}"><img src="{{$job_bid->freelancer->logo}}" alt="freelancer's pic"></a>
+												<a href="/view-freelancer={{$job_bid->freelancer->id}}"><img src="{{$job_bid->freelancer->logo}}" alt="freelancer's pic"></a>
 											</div>
 
 											<!-- Name -->
 											<div class="freelancer-name">
-												<h4><a href="/freelancer={{$job_bid->freelancer->id}}">{{$job_bid->freelancer->first_name}} {{$job_bid->freelancer->last_name}} </a></h4>
+												<h4><a href="/view-freelancer={{$job_bid->freelancer->id}}">{{$job_bid->freelancer->first_name}} {{$job_bid->freelancer->last_name}} </a></h4>
 
 												<!-- Details -->
 												<span class="freelancer-detail-item"><i class="icon-feather-mail"></i> {{$job_bid->freelancer->user->email}}</span>
