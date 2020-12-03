@@ -105,7 +105,7 @@ class TaskController extends Controller
     {
         $tasks=Task::paginate(8);
         $categories=Category::all();
-        return view('Tasks-grid-layout',compact(['tasks','categories']));
+        return view('tasks-grid-layout',compact(['tasks','categories']));
     }
 
     public function filterTasks(Request $request)
