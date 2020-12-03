@@ -224,7 +224,7 @@ class TaskController extends Controller
 
 //        dd($tasks);
         $categories=Category::all();
-        return view('Tasks-grid-layout',compact(['tasks','categories']));
+        return view('tasks-grid-layout',compact(['tasks','categories']));
 
 
 
