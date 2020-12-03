@@ -28,9 +28,15 @@ class TaskBidController extends Controller
 
     public function showFreelancerBids()
     {
-        $task_bids=Task_Bid::all()->where('freelancer_id',Auth::user()->freelancers[0]->id);
+        if(Freelancer::where('user_id',Auth::user()->id)->count())
+        {
+            $task_bids=Task_Bid::all()->where('freelancer_id',Auth::user()->freelancers[0]->id);
 //       dd(Task_Bid::all()->where('freelancer_id',Auth::user()->freelancers[0]->id));
-        return view('dashboard-my-active-bids',compact(['task_bids']));
+            return view('dashboard-my-active-bids',compact(['task_bids']));
+        }
+        else
+            return back();
+
     }
 
     public function editFreelancerBid($bid_id,Request $request)

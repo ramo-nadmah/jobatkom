@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Employer;
 use Auth;
 use App\Job_Bid;
 use Illuminate\Http\Request;
@@ -27,8 +28,14 @@ class JobBidController extends Controller
 
     public function showFreelancerApplications()
     {
-        $job_applications=Job_Bid::all()->where('freelancer_id',Auth::user()->freelancers[0]->id);
-        return view('dashboard-my-active-applications',compact(['job_applications']));
+        if(Employer::where('user_id',Auth::user()->id)->count())
+        {
+            $job_applications=Job_Bid::all()->where('freelancer_id',Auth::user()->freelancers[0]->id);
+            return view('dashboard-my-active-applications',compact(['job_applications']));
+
+        }
+        else
+            return back();
     }
 
     public function editFreelancerApplication($application_id,Request $request)
