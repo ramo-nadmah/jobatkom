@@ -31,7 +31,7 @@ class EmployerController extends Controller
             $about=$employer_record[0]->about;
             $image=$employer_record[0]->logo;
             $email=DB::table('users')->where('id', Auth::user()->id)->value('email');
-            return view('employer-settings',compact(['id','name','location','about','image','email','categories','category']));
+            return view('employer-settings',compact(['name','location','about','image','email','categories','category']));
         }
 
         else
