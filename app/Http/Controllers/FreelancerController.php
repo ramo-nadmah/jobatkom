@@ -9,6 +9,7 @@ use App\Freelancer;
 use App\User;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
@@ -128,11 +129,22 @@ class FreelancerController extends Controller
             $name='/images/suits.png';
         else
         {
-            $image = $request->file('image');
-            $name ='/images/'. md5(time() . rand(0, 10000)) . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('/images');
-            $image->move($destinationPath, $name);
+
+//            ================================== s3 storage implementation
+
+
+
+            $path=$request->file('image')->store('images','s3');
+//        dd($path);
+
+            Storage::disk('s3')->setVisibility($path,'public');
+            $name=Storage::disk('s3')->url($path);
+
+
+//            =================================================================
         }
+
+
 
 
 

@@ -11,6 +11,7 @@ use App\Task;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class EmployerController extends Controller
 {
@@ -107,10 +108,18 @@ class EmployerController extends Controller
             $name='/images/suits.png';
         else
         {
-            $image = $request->file('image');
-            $name ='/images/'. md5(time() . rand(0, 10000)) . '.' . $image->getClientOriginalExtension();
-            $destinationPath = public_path('/images');
-            $image->move($destinationPath, $name);
+
+
+//            ===============================================================      s3 storage implemented
+
+            $path=$request->file('image')->store('images','s3');
+
+
+            Storage::disk('s3')->setVisibility($path,'public');
+            $name=Storage::disk('s3')->url($path);
+
+
+//            =================================================================
         }
 
 

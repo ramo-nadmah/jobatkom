@@ -29,8 +29,13 @@ use Carbon\Carbon;
 Route::get('/job', function () {
     return view('job');
 });
+// testing amazon aws s3
+Route::Get('/image',"ImageController@create");
+Route::post('/image',"ImageController@store");
+Route::Get('/show{image}',"ImageController@show");
 
 
+//
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', "IndexController@main");
 
