@@ -43,7 +43,7 @@ class EmployerController extends Controller
             $about=" ";
             $category=" ";
             $categories=Category::all();
-            $image="/images/suits.png";
+            $image="https://jobatkom.s3.amazonaws.com/images/cXL15ScKvJWxEee2zY6uNSaHzMM5jfxnk2bcfq0Z.png";
             $email=DB::table('users')->where('id', Auth::user()->id)->value('email');
 
 
@@ -105,7 +105,7 @@ class EmployerController extends Controller
 
 //        $number=Freelancer::all()->where('user_id',$id)->count();
         if($request->image ==null)
-            $name='/images/suits.png';
+            $name="https://jobatkom.s3.amazonaws.com/images/cXL15ScKvJWxEee2zY6uNSaHzMM5jfxnk2bcfq0Z.png";
         else
         {
 
@@ -117,6 +117,8 @@ class EmployerController extends Controller
 
             Storage::disk('s3')->setVisibility($path,'public');
             $name=Storage::disk('s3')->url($path);
+
+            dd($name);
 
 
 //            =================================================================

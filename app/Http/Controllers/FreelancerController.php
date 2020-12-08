@@ -55,7 +55,7 @@ class FreelancerController extends Controller
                 $nationality=" ";
                 $description=" ";
                 $tasks_done=0;
-                $image="/images/suits.png";
+                $image="https://jobatkom.s3.amazonaws.com/images/cXL15ScKvJWxEee2zY6uNSaHzMM5jfxnk2bcfq0Z.png";
                 $email=DB::table('users')->where('id', Auth::user()->id)->value('email');
                 $bids_won=0;
                 $jobs_applied=0;
@@ -126,7 +126,7 @@ class FreelancerController extends Controller
 
 //        $number=Freelancer::all()->where('user_id',$id)->count();
         if($request->image ==null)
-            $name='/images/suits.png';
+            $name="https://jobatkom.s3.amazonaws.com/images/cXL15ScKvJWxEee2zY6uNSaHzMM5jfxnk2bcfq0Z.png";
         else
         {
 
