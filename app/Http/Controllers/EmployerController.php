@@ -118,7 +118,6 @@ class EmployerController extends Controller
             Storage::disk('s3')->setVisibility($path,'public');
             $name=Storage::disk('s3')->url($path);
 
-            dd($name);
 
 
 //            =================================================================
