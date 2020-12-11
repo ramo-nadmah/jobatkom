@@ -141,7 +141,7 @@
                             @endphp
 							<li><i class="icon-material-outline-business-center"></i> {{$freelancer->tasks_done}} Tasks done</li>
 							<li><i class="icon-material-outline-account-balance-wallet"></i> ${{number_format($freelancer->minimal_hourly_rate)}} Minimum hourly rate</li>
-							<li><i class="icon-material-outline-access-time"></i> {{$diff}} Joined days ago</li>
+							<li><i class="icon-material-outline-access-time"></i> Joined {{$diff}}  days ago</li>
 						</ul>
 					</div>
 				</a>
